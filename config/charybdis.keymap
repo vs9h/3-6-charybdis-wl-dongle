@@ -36,7 +36,6 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
-        y-invert;
         bindings = <&ib_wheel_scaler 1 16>;
     };
 
@@ -50,7 +49,7 @@
     ib_toggle_layer: ib_toggle_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
-        time-to-live-ms = <750>;
+        time-to-live-ms = <400>;
     };
 
     behaviors {
@@ -77,18 +76,18 @@
             >;
         };
 
-        layer_3 {
-            label = "layer_3";
+        ClickNumpad {
+            label = "ClickNumpad";
             bindings = <
-&kp ESCAPE  &kp GRAVE  &trans     &trans  &trans  &trans    &trans           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &kp UNDER  &mkp LCLK  &mo 5   &mo 3   &trans    &kp KP_NUMBER_0  &kp NUMBER_4     &kp KP_NUMBER_5  &kp NUMBER_6     &kp SINGLE_QUOTE  &kp BACKSLASH
-&trans      &trans     &mkp RCLK  &trans  &trans  &trans    &trans           &kp KP_NUMBER_1  &kp NUMBER_2     &kp NUMBER_3     &kp HASH          &trans
+&kp ESCAPE  &kp GRAVE  &trans     &trans  &trans  &trans    &trans           &kp NUMBER_7     &kp NUMBER_8  &kp NUMBER_9  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans      &kp UNDER  &mkp LCLK  &none   &mo 3   &trans    &kp NUMBER_0     &kp NUMBER_4     &kp NUMBER_5  &kp NUMBER_6  &kp SINGLE_QUOTE  &kp BACKSLASH
+&trans      &trans     &mkp RCLK  &trans  &trans  &trans    &trans           &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp HASH          &trans
                                   &mo 2   &trans  &trans    &kp KP_NUMBER_1  &kp KP_NUMBER_2
             >;
         };
 
-        Game_++ {
-            label = "Game ++";
+        Arrows {
+            label = "Arrows";
             bindings = <
 &none   &none   &trans  &trans  &trans  &trans    &trans  &trans    &none     &trans        &trans     &trans
 &trans  &none   &none   &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
@@ -97,8 +96,8 @@
             >;
         };
 
-        Raise {
-            label = "Raise";
+        Signs {
+            label = "Signs";
             bindings = <
 &trans  &trans  &trans       &trans  &trans  &trans    &kp LBRC         &kp RBRC              &kp KP_PLUS            &kp LESS_THAN     &kp AMPERSAND    &trans
 &trans  &trans  &trans       &trans  &trans  &trans    &kp QUESTION     &kp KP_EQUAL          &kp KP_SUBTRACT        &kp GREATER_THAN  &kp ASTRK        &kp PIPE
@@ -118,10 +117,10 @@
 
         Mouse {
             bindings = <
-   &trans  &trans  &trans     &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans     &trans
-   &trans  &trans  &trans     &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans     &trans
-&mkp MCLK  &trans  &trans     &trans  &trans     &trans    &trans  &trans  &trans  &trans  &trans  &mkp LCLK
-                           &mkp LCLK  &trans  &mkp RCLK    &trans  &trans
+&trans     &trans  &trans  &trans  &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &trans  &trans  &trans     &trans       &trans  &trans  &trans  &trans  &trans  &trans
+&mkp MCLK  &trans  &trans  &trans  &trans     &trans       &trans  &trans  &trans  &trans  &trans  &mkp LCLK
+                           &none   &mkp LCLK  &mkp RCLK    &trans  &trans
             >;
         };
     };
