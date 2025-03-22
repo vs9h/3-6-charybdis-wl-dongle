@@ -9,7 +9,7 @@
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <0 1 3 4>;
+        layers = <0 1 2 3 4>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -49,7 +49,7 @@
     ib_toggle_layer: ib_toggle_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
-        time-to-live-ms = <250>;
+        time-to-live-ms = <300>;
     };
 
     behaviors {
@@ -120,7 +120,7 @@
 &trans     &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans  &mkp LCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &mkp MCLK  &trans  &mkp RCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mkp LCLK
-                              &none   &mo 1   &trans    &trans  &trans
+                              &trans  &mo 1   &trans    &trans  &trans
             >;
         };
     };
