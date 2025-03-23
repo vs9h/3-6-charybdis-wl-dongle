@@ -9,7 +9,7 @@
     trackball_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <0 1 2 3 4>;
+        layers = <0 1 2 3 5>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -21,7 +21,7 @@
     trackball_snipe_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <2>;
+        layers = <>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
@@ -32,7 +32,7 @@
     trackball_scroll_listener {
         compatible = "zmk,input-behavior-listener";
         device = <&vtrackball>;
-        layers = <1>;
+        layers = <4>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
@@ -49,7 +49,7 @@
     ib_toggle_layer: ib_toggle_layer {
         compatible = "zmk,input-behavior-tog-layer";
         #binding-cells = <1>;
-        time-to-live-ms = <300>;
+        time-to-live-ms = <250>;
     };
 
     behaviors {
@@ -106,7 +106,8 @@
             >;
         };
 
-        layer_4 {
+        DragScroll {
+            label = "DragScroll";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
@@ -120,7 +121,7 @@
 &trans     &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans  &mkp LCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &mkp MCLK  &trans  &mkp RCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mkp LCLK
-                              &trans  &mo 1   &trans    &trans  &trans
+                              &trans  &mo 4   &trans    &trans  &trans
             >;
         };
     };
