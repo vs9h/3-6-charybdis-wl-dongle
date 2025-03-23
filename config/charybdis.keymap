@@ -36,7 +36,7 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_MISC>;
         y-input-code = <INPUT_REL_WHEEL>;
-        bindings = <&ib_wheel_scaler 1 16>;
+        bindings = <&ib_wheel_scaler 1 8>;
     };
 
     ib_wheel_scaler: ib_wheel_scaler {
@@ -119,9 +119,9 @@
         Mouse {
             bindings = <
 &trans     &trans  &trans     &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans  &mkp LCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans  &mkp LCLK  &mo 4   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &mkp MCLK  &trans  &mkp RCLK  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &mkp LCLK
-                              &trans  &mo 4   &trans    &trans  &trans
+                              &trans  &trans  &trans    &trans  &trans
             >;
         };
     };
